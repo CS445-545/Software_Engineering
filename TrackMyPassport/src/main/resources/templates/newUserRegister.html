@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passport Status Tracking System</title>
+<link rel="stylesheet" href="css/main.css">
+<script>
+         function check(){
+         	
+         	if(document.getElementById('password').value==document.getElementById('password1').value){
+         		return true;
+         	}
+         	else{
+         		document.getElementById('message').style.color='red';
+         		document.getElementById('message').innerHTML='Passwords does not match';
+         		document.getElementById('password').value="";
+         		document.getElementById('password1').value="";
+         		return false;
+         	}
+         }  
+</script>
+<style>
+.hero {
+	padding: 3em;
+}
+
+.agileinfo-grap {
+	position: center;
+	padding: 1em;
+	width: 50%;
+	border: 1px solid #e7ebee;
+	margin-bottom: 2em;
+	margin-left: 20em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	-o-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.button {
+	position: center;
+	background-color: #008DE7;
+	border: none;
+	font-size: 28px;
+	color: #FFFFFF;
+	text-align: center;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	text-decoration: none;
+	overflow: hidden;
+	cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+	<div class="navbar">
+		<div class="container">
+			<a class="logo" href="#"><span>Passport</span> Status</a> <img
+				id="mobile-cta" class="mobile-menu" src="images/menu.svg"
+				alt="Open Navigation">
+			<nav>
+				<img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg"
+					alt="Close Navigation">
+				<ul class="primary-nav">
+					<li class="current"><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+				</ul>
+				<ul class="secondary-nav">
+					<li class="go-premium-cta"><a href="login">Home</a></li>
+					<!--                      <li><a href="#"></a></li> 
+                  <li class="go-premium-cta"><a href="login">Logout</a></li> -->
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<section class="hero">
+		<div class="agileinfo-grap">
+			<h2>Registration</h2>
+			<div class="agileits-box">
+				<h4>
+					<b> <span style="color: #FF3F4A; text-align:center;" th:if="${logError != null}"
+						class="error"> Email ID already present! Please enter
+							another one! </span>
+
+					</b>
+				</h4>
+				<form th:action="@{/save2}" method="post" onsubmit="return check()"
+					th:object="${login_details}">
+					<div class="form-group row">
+						<label for="inputEmail3" class="col-sm-3 form-control-label">User
+							Name</label>
+						<div class="col-sm-9">
+							<input type="text" cols="7" rows="1" class="form-control"
+								th:field="*{user_name}" name="username"
+								placeholder="Enter User Name" required></input>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-3 form-control-label">Email</label>
+						<div class="col-sm-9">
+							<input type="email" cols="7" rows="1" class="form-control"
+								name="emailid" th:field="*{email_id}"
+								placeholder="Enter Email ID" onblur="validateEmail(this);"
+								required></input>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-3 form-control-label">Password</label>
+						<div class="col-sm-9">
+							<input type="password" cols="7" rows="1" class="form-control"
+								name="password" id="password" th:field="*{password}"
+								placeholder="Enter password" required></input>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-3 form-control-label"> Confirm
+							Password</label>
+						<div class="col-sm-9">
+							<input type="password" cols="7" rows="1" class="form-control"
+								id="password1" name="password1" placeholder="Re-Enter password"
+								required></input>
+						</div>
+					</div>
+					<span id='message'></span>
+					<div class="form-group mb-n">
+
+						<button type="submit" id="submit" class="button">Register</button>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- /Bootstrap Core JavaScript -->
+	<!-- morris JavaScript -->
+	<script src="js/raphael-min.js"></script>
+	<script src="js/morris.js"></script>
+	<script>
+         const mobileBtn = document.getElementById('mobile-cta')
+               nav = document.querySelector('nav')
+               mobileBtnExit = document.getElementById('mobile-exit');
+         
+         mobileBtn.addEventListener('click', () => {
+             nav.classList.add('menu-btn');
+         })
+         
+         mobileBtnExit.addEventListener('click', () => {
+             nav.classList.remove('menu-btn');
+         })
+         
+      </script>
+</body>
+</html>
