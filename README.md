@@ -2,6 +2,7 @@
 Install Xampp- https://www.apachefriends.org/download.html
 
 Steps-
+
 1)Start Apache and MySQL from Xampp Control Panel.
 
 2)Create a Database- ' passportstatustracking '.
