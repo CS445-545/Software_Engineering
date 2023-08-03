@@ -11,7 +11,7 @@ Steps-
 
   3)To run the Code, open the project in Visual Studio Code and run- 'mvn spring-boot:run'
 
-  4)Create folder- 'Deveopment_avecto' in C drive and a pdf '2simple' in it.
+  4)Create folder- 'Deveopment_avecto' in C drive.
 
   4)Open Web Browser and use the url- 'http://localhost:8080/login' 
 
