@@ -5,7 +5,7 @@ Steps-
 
   1)Start Apache and MySQL from Xampp Control Panel.
 
-  2)Create a Database- ' passportstatustracking '.
+  2)Create a Database- ' passportstatus'.
 
   3)To run the Code, open Visual Studio Code and run- ' mvn spring-boot:run '
 
