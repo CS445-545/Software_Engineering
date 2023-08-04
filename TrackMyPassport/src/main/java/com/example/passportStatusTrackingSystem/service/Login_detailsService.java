@@ -1,3 +1,6 @@
+// This service class handles business logic related to the Login_details entity in the passport status tracking system.
+// It communicates with the Login_detailsRepository for data access.
+
 package com.example.passportStatusTrackingSystem.service;
 import java.util.List;
 
@@ -10,7 +13,7 @@ import com.example.passportStatusTrackingSystem.repository.Login_detailsReposito
 @Service
 @Transactional
 public class Login_detailsService {
-	 @Autowired
+	 	@Autowired
 	    private Login_detailsRepository repo;
 	     
 	    public List<Login_details> listAll() {
