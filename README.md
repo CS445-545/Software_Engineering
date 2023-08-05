@@ -2,9 +2,13 @@
 Used 'https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/' for reference
 
 Install Xampp- https://www.apachefriends.org/download.html
+
 Install Maven :https://maven.apache.org/download.cgi  download  apache-maven-3.9.4-bin.zip
+
 Extract above zip folder in c drive/programFiles/Maven
+
 Add MAVEN_HOME environment variable with value as above path
+
 Set Path Environment Variable to include %MAVEN_HOME%\bin
 
 Steps-
