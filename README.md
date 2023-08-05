@@ -19,8 +19,8 @@ Steps-
 
   3)Create a folder 'Deveopment_avecto' in C drive.
 
-  3)To run the Code, open the project in Visual Studio Code and run- 'mvn spring-boot:run'
+  4)To run the Code, open the project in Visual Studio Code and run- 'mvn spring-boot:run'
 
-  4)Open Web Browser and use the url- 'http://localhost:8080/login' 
+  5)Open Web Browser and use the url- 'http://localhost:8080/login' 
 
-  5)Username- 'admin' and password- 'admin' are the credentials for Admin Login
+  6)Username- 'admin' and password- 'admin' are the credentials for Admin Login
