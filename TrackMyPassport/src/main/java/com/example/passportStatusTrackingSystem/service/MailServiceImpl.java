@@ -1,5 +1,6 @@
-//https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/  used for reference
-// This service class provides implementations for sending emails using the Spring Boot JavaMailSender.
+/**
+This service class provides implementations for sending emails using the Spring Boot JavaMailSender.
+*/
 
 package com.example.passportStatusTrackingSystem.service;
 
@@ -24,7 +25,14 @@ public class MailServiceImpl implements MailService {
 	@Autowired
 	JavaMailSender mailSender;
 
-	// Sends an email with an attachment (PDF) to the provided recipient email address.
+	/**
+	 * Sends an email with an attachment (PDF) to the provided recipient email
+	 * address.
+	 *
+	 * @param mail        The Mail object containing email details.
+	 * @param applicantId The ID of the applicant for whom the email is being sent.
+	 * @return 1 if the email is sent successfully, otherwise 0.
+	 */
 	public int sendEmail(Mail mail, long applicantId) {
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 		int flag = 0;
@@ -52,7 +60,13 @@ public class MailServiceImpl implements MailService {
 		return flag;
 	}
 
-	// Sends a simple email without an attachment to the provided recipient email address.
+	/**
+	 * Sends a simple email without an attachment to the provided recipient email
+	 * address.
+	 *
+	 * @param mail The Mail object containing email details.
+	 * @return 1 if the email is sent successfully, otherwise 0.
+	 */
 	public int sendEmail(Mail mail) {
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 		int flag = 0;

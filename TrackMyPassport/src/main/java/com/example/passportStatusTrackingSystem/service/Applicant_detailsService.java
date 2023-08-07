@@ -3,18 +3,20 @@
 
 package com.example.passportStatusTrackingSystem.service;
 
+import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
-import java.awt.Color;
+
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
-import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.example.passportStatusTrackingSystem.model.Applicant_details;
 import com.example.passportStatusTrackingSystem.repository.Applicant_detailsRepository;
 
@@ -162,7 +164,6 @@ public class Applicant_detailsService {
 			contentStream.showText("Date Of Issue: " + Start_date + "        Date Of Expiry: " + end_date);
 			contentStream.endText();
 
-			System.out.println("Multiple Text Content is added in the PDF Document.");
 			contentStream.close();
 
 			document.save(filepath);
