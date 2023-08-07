@@ -7,9 +7,9 @@ Link to the set up and work flow document - https://drive.google.com/file/d/1LXg
  
 2)	Install XAMPP- https://www.apachefriends.org/download.html (8.2.4/ PHP 8.2.4)
  
-  a.	Create a folder in D drive by the name ‘Xampp’.
-   
-  b.	Install Xampp in this folder.
+    a.	Create a folder in D drive by the name ‘Xampp’.
+     
+    b.	Install Xampp in this folder.
  
 3)	Open the XAMPP Control panel.
    
