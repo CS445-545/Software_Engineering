@@ -1,12 +1,12 @@
-/**
-
-This interface defines methods for sending emails in the passport status tracking system.
-*/
-
 package com.example.passportStatusTrackingSystem.service;
 
 import com.example.passportStatusTrackingSystem.model.Mail;
 
+/**
+ * 
+ * This interface defines methods for sending emails in the passport status
+ * tracking system.
+ */
 public interface MailService {
 	/**
 	 * Sends an email using the provided Mail object and returns an integer status
