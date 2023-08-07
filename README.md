@@ -1,6 +1,8 @@
 # TrackMyPassport
 Link to the set up and work flow document - https://drive.google.com/file/d/1LXgV2PMbzmUymLL4ue_jj8bBoUhO1Hkl/view?usp=drive_link
 
+Link to the design document - https://docs.google.com/document/d/1GTrhDMapBnnqRzrptBS2fNExgqlWL5nA/edit?usp=drive_link&ouid=105881010644857215437&rtpof=true&sd=true
+
 # SETUP FOR THE PROJECT
 
 1)	Create a folder ‘Deveopment_avecto’ in C Drive.
