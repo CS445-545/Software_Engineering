@@ -4,8 +4,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * This class represents an email message used in the passport status tracking system.
- * It is used to store the necessary details to construct an email, such as the sender, recipients, subject, content, and attachments.
+ * This class represents an email message used in the passport status tracking
+ * system.
+ * It is used to store the necessary details to construct an email, such as the
+ * sender, recipients, subject, content, and attachments.
  * Reference: https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/
  */
 public class Mail {
@@ -44,6 +46,7 @@ public class Mail {
 
     /**
      * Get the content type of the email.
+     * 
      * @return The content type of the email.
      */
     public String getContentType() {
@@ -52,7 +55,9 @@ public class Mail {
 
     /**
      * Set the content type of the email.
-     * @param contentType The content type of the email.
+     * 
+     * @param contentType
+     *            The content type of the email.
      */
     public void setContentType(String contentType) {
         this.contentType = contentType;
@@ -60,6 +65,7 @@ public class Mail {
 
     /**
      * Get the blind carbon copy (bcc) email addresses.
+     * 
      * @return The blind carbon copy (bcc) email addresses.
      */
     public String getMailBcc() {
@@ -68,7 +74,9 @@ public class Mail {
 
     /**
      * Set the blind carbon copy (bcc) email addresses.
-     * @param mailBcc The blind carbon copy (bcc) email addresses.
+     * 
+     * @param mailBcc
+     *            The blind carbon copy (bcc) email addresses.
      */
     public void setMailBcc(String mailBcc) {
         this.mailBcc = mailBcc;
@@ -76,6 +84,7 @@ public class Mail {
 
     /**
      * Get the carbon copy (cc) email addresses.
+     * 
      * @return The carbon copy (cc) email addresses.
      */
     public String getMailCc() {
@@ -84,7 +93,9 @@ public class Mail {
 
     /**
      * Set the carbon copy (cc) email addresses.
-     * @param mailCc The carbon copy (cc) email addresses.
+     * 
+     * @param mailCc
+     *            The carbon copy (cc) email addresses.
      */
     public void setMailCc(String mailCc) {
         this.mailCc = mailCc;
@@ -92,6 +103,7 @@ public class Mail {
 
     /**
      * Get the sender email address.
+     * 
      * @return The sender email address.
      */
     public String getMailFrom() {
@@ -100,7 +112,9 @@ public class Mail {
 
     /**
      * Set the sender email address.
-     * @param mailFrom The sender email address.
+     * 
+     * @param mailFrom
+     *            The sender email address.
      */
     public void setMailFrom(String mailFrom) {
         this.mailFrom = mailFrom;
@@ -108,6 +122,7 @@ public class Mail {
 
     /**
      * Get the email subject.
+     * 
      * @return The email subject.
      */
     public String getMailSubject() {
@@ -116,7 +131,9 @@ public class Mail {
 
     /**
      * Set the email subject.
-     * @param mailSubject The email subject.
+     * 
+     * @param mailSubject
+     *            The email subject.
      */
     public void setMailSubject(String mailSubject) {
         this.mailSubject = mailSubject;
@@ -124,6 +141,7 @@ public class Mail {
 
     /**
      * Get the recipient email address.
+     * 
      * @return The recipient email address.
      */
     public String getMailTo() {
@@ -132,7 +150,9 @@ public class Mail {
 
     /**
      * Set the recipient email address.
-     * @param mailTo The recipient email address.
+     * 
+     * @param mailTo
+     *            The recipient email address.
      */
     public void setMailTo(String mailTo) {
         this.mailTo = mailTo;
@@ -140,6 +160,7 @@ public class Mail {
 
     /**
      * Get the email send date (current date and time).
+     * 
      * @return The email send date (current date and time).
      */
     public Date getMailSendDate() {
@@ -148,6 +169,7 @@ public class Mail {
 
     /**
      * Get the email content.
+     * 
      * @return The email content.
      */
     public String getMailContent() {
@@ -156,7 +178,9 @@ public class Mail {
 
     /**
      * Set the email content.
-     * @param mailContent The email content.
+     * 
+     * @param mailContent
+     *            The email content.
      */
     public void setMailContent(String mailContent) {
         this.mailContent = mailContent;
@@ -164,6 +188,7 @@ public class Mail {
 
     /**
      * Get the list of attachments for the email.
+     * 
      * @return The list of attachments for the email.
      */
     public List<Object> getAttachments() {
@@ -172,7 +197,9 @@ public class Mail {
 
     /**
      * Set the list of attachments for the email.
-     * @param attachments The list of attachments for the email.
+     * 
+     * @param attachments
+     *            The list of attachments for the email.
      */
     public void setAttachments(List<Object> attachments) {
         this.attachments = attachments;

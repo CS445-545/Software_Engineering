@@ -1,14 +1,14 @@
 package com.example.passportStatusTrackingSystem.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.example.passportStatusTrackingSystem.model.Login_details;
 import com.example.passportStatusTrackingSystem.repository.Login_detailsRepository;
 
-/*This service class handles business logic related to the Login_details entity in the passport status tracking system.
-It communicates with the Login_detailsRepository for data access.*/
 @Service
 @Transactional
 public class Login_detailsService {
@@ -27,7 +27,8 @@ public class Login_detailsService {
 	/**
 	 * Finds a Login_details object by its email ID.
 	 *
-	 * @param emailId The email ID to search for.
+	 * @param emailId
+	 *            The email ID to search for.
 	 * @return The Login_details object with the specified email ID, if found;
 	 *         otherwise, null.
 	 */
@@ -38,7 +39,8 @@ public class Login_detailsService {
 	/**
 	 * Saves a new Login_details object or updates an existing one.
 	 *
-	 * @param login_details The Login_details object to be saved or updated.
+	 * @param login_details
+	 *            The Login_details object to be saved or updated.
 	 */
 	public void save(Login_details login_details) {
 		repo.save(login_details);
@@ -47,7 +49,8 @@ public class Login_detailsService {
 	/**
 	 * Retrieves a Login_details object by its email ID.
 	 *
-	 * @param email_id The email ID of the Login_details object to retrieve.
+	 * @param email_id
+	 *            The email ID of the Login_details object to retrieve.
 	 * @return The Login_details object with the specified email ID, if found;
 	 *         otherwise, null.
 	 */
@@ -58,7 +61,8 @@ public class Login_detailsService {
 	/**
 	 * Deletes a Login_details object with the specified email ID.
 	 *
-	 * @param email_id The email ID of the Login_details object to delete.
+	 * @param email_id
+	 *            The email ID of the Login_details object to delete.
 	 */
 	public void delete(String email_id) {
 		repo.deleteById(email_id);
@@ -67,7 +71,8 @@ public class Login_detailsService {
 	/**
 	 * Finds a Login_details object by its email ID.
 	 *
-	 * @param email_id The email ID to search for.
+	 * @param email_id
+	 *            The email ID to search for.
 	 * @return The Login_details object with the specified email ID, if found;
 	 *         otherwise, null.
 	 */
@@ -78,8 +83,10 @@ public class Login_detailsService {
 	/**
 	 * Finds a Login_details object by its email ID and password.
 	 *
-	 * @param emailId  The email ID to search for.
-	 * @param password The password to search for.
+	 * @param emailId
+	 *            The email ID to search for.
+	 * @param password
+	 *            The password to search for.
 	 * @return The Login_details object with the specified email ID and password, if
 	 *         found; otherwise, null.
 	 */

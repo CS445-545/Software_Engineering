@@ -2,17 +2,14 @@ package com.example.passportStatusTrackingSystem.service;
 
 import com.example.passportStatusTrackingSystem.model.Mail;
 
-/**
- * 
- * This interface defines methods for sending emails in the passport status
- * tracking system.
- */
+
 public interface MailService {
 	/**
 	 * Sends an email using the provided Mail object and returns an integer status
 	 * code.
 	 *
-	 * @param mail The Mail object containing email details.
+	 * @param mail
+	 *            The Mail object containing email details.
 	 * @return 1 if the email is sent successfully, otherwise 0.
 	 */
 	public int sendEmail(Mail mail);
@@ -23,8 +20,10 @@ public interface MailService {
 	 * The applicant ID is used to retrieve applicant-specific details for email
 	 * content, if needed.
 	 *
-	 * @param mail        The Mail object containing email details.
-	 * @param applicantId The ID of the applicant for whom the email is being sent.
+	 * @param mail
+	 *            The Mail object containing email details.
+	 * @param applicantId
+	 *            The ID of the applicant for whom the email is being sent.
 	 * @return 1 if the email is sent successfully, otherwise 0.
 	 */
 	public int sendEmail(Mail mail, long applicantId);

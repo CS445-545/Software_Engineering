@@ -1,7 +1,3 @@
-/**
- * The main controller class that handles all the HTTP requests and
- * business logic of the Passport Status Tracking System.
- */
 package com.example.passportStatusTrackingSystem.controller;
 
 import java.util.List;
@@ -72,7 +68,8 @@ public class MainController {
 	/**
 	 * Displays the list of applicants' details for Passport Officer approval.
 	 * 
-	 * @param model The model to store attributes.
+	 * @param model
+	 *            The model to store attributes.
 	 * @return The view name of the page displaying applicant details for Passport
 	 *         Officer.
 	 */
@@ -88,7 +85,8 @@ public class MainController {
 	/**
 	 * Displays the list of applicants' details for Police Officer approval.
 	 * 
-	 * @param model The model to store attributes.
+	 * @param model
+	 *            The model to store attributes.
 	 * @return The view name of the page displaying applicant details for Police
 	 *         Officer.
 	 */
@@ -115,7 +113,8 @@ public class MainController {
 	/**
 	 * Displays the login page for existing applicant users.
 	 *
-	 * @param model The model to store attributes.
+	 * @param model
+	 *            The model to store attributes.
 	 * @return The view name for the existing applicant login page.
 	 */
 	@RequestMapping(value = "/existingApplicantLogin")
@@ -131,8 +130,10 @@ public class MainController {
 	/**
 	 * Displays the status table of the applicant.
 	 *
-	 * @param model             The model to store attributes.
-	 * @param applicant_details The applicant details to track the status.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param applicant_details
+	 *            The applicant details to track the status.
 	 * @return The view name for the status table page.
 	 */
 	@PostMapping(value = "/trackStatusTable")
@@ -162,7 +163,6 @@ public class MainController {
 			return "trackStatusTable";
 
 		} catch (NullPointerException e) {
-			System.out.println("Null Pointer exception");
 			return "redirect:/loginTrackStatus";
 		}
 	}
@@ -170,7 +170,8 @@ public class MainController {
 	/**
 	 * Displays the new applicant page.
 	 *
-	 * @param model The model to store attributes.
+	 * @param model
+	 *            The model to store attributes.
 	 * @return The view name for the new applicant page.
 	 */
 	@RequestMapping(value = "/newapplicant")
@@ -186,9 +187,12 @@ public class MainController {
 	 * Saves the new applicant's details and sends an email with appointment
 	 * details.
 	 *
-	 * @param model             The model to store attributes.
-	 * @param applicant_details The new applicant's details.
-	 * @param login_details     The login details.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param applicant_details
+	 *            The new applicant's details.
+	 * @param login_details
+	 *            The login details.
 	 * @return The view name for the login page.
 	 */
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
@@ -215,7 +219,6 @@ public class MainController {
 				mailService.sendEmail(mail);
 
 				str = "login";
-				System.out.println("Null Pointer exception");
 			}
 		} catch (NullPointerException e) {
 
@@ -228,8 +231,10 @@ public class MainController {
 	/**
 	 * Saves the existing user's (applicant) appointment details.
 	 *
-	 * @param model             The model to store attributes.
-	 * @param applicant_details The existing applicant's details.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param applicant_details
+	 *            The existing applicant's details.
 	 * @return The view name for the login page.
 	 */
 	@RequestMapping(value = "/save1", method = RequestMethod.POST)
@@ -240,8 +245,6 @@ public class MainController {
 
 		try {
 			if (ad1 != null) {
-				System.out.println(applicant_details.getPassport_id());
-				System.out.println(ad1.getPassport_id());
 
 				ad1.setAddress(applicant_details.getAddress());
 				ad1.setEmail_id(applicant_details.getEmail_id());
@@ -261,7 +264,6 @@ public class MainController {
 			}
 
 		} catch (NullPointerException e) {
-			System.out.println("null pointer exception");
 			throw e;
 
 		}
@@ -270,7 +272,8 @@ public class MainController {
 	/**
 	 * Displays the login page for existing applicant users.
 	 *
-	 * @param model The model to store attributes.
+	 * @param model
+	 *            The model to store attributes.
 	 * @return The view name for the existing applicant login page.
 	 */
 	@RequestMapping(value = "/loginTrackStatus")
@@ -284,7 +287,8 @@ public class MainController {
 	/**
 	 * Displays the registration page for new users (applicants).
 	 *
-	 * @param model The model to store attributes.
+	 * @param model
+	 *            The model to store attributes.
 	 * @return The view name for the new user registration page.
 	 */
 	@RequestMapping(value = "/newUserRegister")
@@ -299,9 +303,11 @@ public class MainController {
 	/**
 	 * Sends the user's password to their registered email.
 	 *
-	 * @param model         The model to store attributes.
-	 * @param login_details The login details containing the email for password
-	 *                      retrieval.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param login_details
+	 *            The login details containing the email for password
+	 *            retrieval.
 	 * @return The view name for the login page or an error page if email not found.
 	 */
 	@RequestMapping(value = "/sendPassword", method = RequestMethod.POST)
@@ -325,7 +331,6 @@ public class MainController {
 
 		} catch (NullPointerException e) {
 
-			System.out.println("Null Pointer Exception");
 			Applicant_details ap = new Applicant_details();
 			model.addAttribute("applicant_details", ap);
 			return "redirect:/emailForgot";
@@ -336,8 +341,10 @@ public class MainController {
 	/**
 	 * Sends an OTP to the user's registered email for verification.
 	 *
-	 * @param model         The model to store attributes.
-	 * @param login_details The login details containing the email for OTP sending.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param login_details
+	 *            The login details containing the email for OTP sending.
 	 * @return The view name for the OTP verification page or an error page if email
 	 *         not found.
 	 */
@@ -346,7 +353,6 @@ public class MainController {
 		Login_details login_details1 = service1.findByEmailId(login_details.getEmail_id());
 		try {
 			randomPIN = (int) (Math.random() * 9000) + 1000;
-			System.out.println(randomPIN);
 			emailId = login_details1.getEmail_id();
 			password = login_details1.getPassword();
 			applicationId = login_details1.getApplication_id();
@@ -366,7 +372,6 @@ public class MainController {
 			return "otp2";
 
 		} catch (NullPointerException e) {
-			System.out.println("Null Pointer Exception");
 			Applicant_details ap = new Applicant_details();
 			model.addAttribute("applicant_details", ap);
 			return "redirect:/emailForgot";
@@ -376,9 +381,11 @@ public class MainController {
 	/**
 	 * Retrieves existing applicant details for renewal.
 	 *
-	 * @param model          The model to store attributes.
-	 * @param login_details1 The login details containing the email and password for
-	 *                       validation.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param login_details1
+	 *            The login details containing the email and password for
+	 *            validation.
 	 * @return The view name for the application renewal page or the login page if
 	 *         credentials are invalid.
 	 */
@@ -400,7 +407,8 @@ public class MainController {
 	/**
 	 * Displays the forgot password page.
 	 *
-	 * @param model The model to store attributes.
+	 * @param model
+	 *            The model to store attributes.
 	 * @return The view name for the forgot password page.
 	 */
 	@RequestMapping(value = "/emailForgot")
@@ -414,8 +422,10 @@ public class MainController {
 	 * Saves the new user (applicant) details and sends an OTP to the registered
 	 * email.
 	 *
-	 * @param model         The model to store attributes.
-	 * @param login_details The login details containing the email for registration.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param login_details
+	 *            The login details containing the email for registration.
 	 * @return The view name for OTP verification page or an error page if
 	 *         registration fails.
 	 */
@@ -432,11 +442,9 @@ public class MainController {
 			str = "newUserRegister";
 		} catch (NullPointerException e) {
 			flag = 1;
-			System.out.println("Null Pointer exception");
 		}
 		if (flag == 1) {
 			randomPIN = (int) (Math.random() * 9000) + 1000;
-			System.out.println(randomPIN);
 			Mail mail = new Mail();
 			mail.setMailFrom("passportstatustracking@gmail.com");
 			mail.setMailTo(login_details.getEmail_id());
@@ -465,8 +473,10 @@ public class MainController {
 	 * Compares the entered OTP with the generated OTP for new applicant
 	 * verification.
 	 *
-	 * @param model             The model to store attributes.
-	 * @param applicant_details The applicant details containing the entered OTP.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param applicant_details
+	 *            The applicant details containing the entered OTP.
 	 * @return The view name for the new applicant registration page or an error
 	 *         page if OTP is incorrect.
 	 */
@@ -488,9 +498,12 @@ public class MainController {
 	 * Compares the entered OTP with the generated OTP for existing applicant
 	 * password retrieval.
 	 *
-	 * @param model             The model to store attributes.
-	 * @param login_details     The login details containing the entered OTP.
-	 * @param applicant_details The applicant details containing the entered OTP.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param login_details
+	 *            The login details containing the entered OTP.
+	 * @param applicant_details
+	 *            The applicant details containing the entered OTP.
 	 * @return The view name for the login page or an error page if OTP is
 	 *         incorrect.
 	 */
@@ -520,9 +533,12 @@ public class MainController {
 	/**
 	 * Handles the approval of an application by the Passport Officer.
 	 *
-	 * @param model             The model to store attributes.
-	 * @param applicationId     The ID of the application to be approved.
-	 * @param applicant_details The applicant details containing the application ID.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param applicationId
+	 *            The ID of the application to be approved.
+	 * @param applicant_details
+	 *            The applicant details containing the application ID.
 	 * @return The view name for the applicant details page.
 	 */
 	@GetMapping(value = "/approve/{applicationId}/po")
@@ -544,9 +560,12 @@ public class MainController {
 	/**
 	 * Handles the request when Passport Officer (PO) rejects an application.
 	 *
-	 * @param model             The model to store attributes.
-	 * @param applicationId     The ID of the application to be rejected.
-	 * @param applicant_details The applicant details model attribute.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param applicationId
+	 *            The ID of the application to be rejected.
+	 * @param applicant_details
+	 *            The applicant details model attribute.
 	 * @return The view name to redirect after the rejection process.
 	 */
 	@RequestMapping(value = { "/reject/{applicationId}/po" })
@@ -567,9 +586,12 @@ public class MainController {
 	/**
 	 * Handles the request when Police Officer (PO) approves an application.
 	 *
-	 * @param model             The model to store attributes.
-	 * @param applicationId     The ID of the application to be approved.
-	 * @param applicant_details The applicant details model attribute.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param applicationId
+	 *            The ID of the application to be approved.
+	 * @param applicant_details
+	 *            The applicant details model attribute.
 	 * @return The view name to redirect after the approval process.
 	 */
 	@GetMapping(value = "/approve/{applicationId}/police")
@@ -590,9 +612,12 @@ public class MainController {
 	/**
 	 * Handles the request when Police Officer (PO) rejects an application.
 	 *
-	 * @param model             The model to store attributes.
-	 * @param applicationId     The ID of the application to be rejected.
-	 * @param applicant_details The applicant details model attribute.
+	 * @param model
+	 *            The model to store attributes.
+	 * @param applicationId
+	 *            The ID of the application to be rejected.
+	 * @param applicant_details
+	 *            The applicant details model attribute.
 	 * @return The view name to redirect after the rejection process.
 	 */
 	@RequestMapping(value = { "/reject/{applicationId}/police" })

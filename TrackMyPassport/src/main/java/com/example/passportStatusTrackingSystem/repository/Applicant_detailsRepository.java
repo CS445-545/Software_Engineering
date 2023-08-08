@@ -2,13 +2,13 @@ package com.example.passportStatusTrackingSystem.repository;
 
 import java.util.Date;
 import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+
 import com.example.passportStatusTrackingSystem.model.Applicant_details;
 
-/* This repository interface handles data access and database interactions for the Applicant_details entity. 
-It extends JpaRepository, providing out-of-the-box CRUD operations for the entity.*/
 public interface Applicant_detailsRepository extends JpaRepository<Applicant_details, Long> {
 	/*
 	 * Custom query to find applicants with a specific status and appointment date

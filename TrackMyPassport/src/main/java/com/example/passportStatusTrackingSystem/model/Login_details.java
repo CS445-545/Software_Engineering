@@ -7,7 +7,8 @@ import javax.persistence.Id;
 
 /**
  * This class represents the Login_details entity in the application.
- * It is used to store and manage user login details for the passport status tracking system.
+ * It is used to store and manage user login details for the passport status
+ * tracking system.
  */
 @Entity
 public class Login_details {

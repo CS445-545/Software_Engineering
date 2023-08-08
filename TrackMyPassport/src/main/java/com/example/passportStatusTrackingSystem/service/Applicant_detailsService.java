@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -12,11 +13,10 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.example.passportStatusTrackingSystem.model.Applicant_details;
 import com.example.passportStatusTrackingSystem.repository.Applicant_detailsRepository;
 
-/*This service class handles business logic related to the Applicant_details entity in the passport status tracking system.
-It communicates with the Applicant_detailsRepository for data access.*/
 @Service
 @Transactional
 public class Applicant_detailsService {

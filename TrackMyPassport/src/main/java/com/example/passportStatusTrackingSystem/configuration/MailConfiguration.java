@@ -1,6 +1,3 @@
-/**
- * Configuration class for setting up the mail sender to send emails via SMTP in the passport status tracking system.
- */
 package com.example.passportStatusTrackingSystem.configuration;
 
 import java.util.Properties;
@@ -12,9 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
-/**
- * Configuration class for setting up the mail sender to send emails via SMTP.
- */
 @Configuration
 @EnableConfigurationProperties(MailConfiguration.MailProperties.class)
 public class MailConfiguration {
@@ -23,8 +17,9 @@ public class MailConfiguration {
      * Configures and returns the JavaMailSender bean, which will be used to send
      * emails.
      *
-     * @param mailProperties The mail properties configured in
-     *                       application.properties.
+     * @param mailProperties
+     *            The mail properties configured in
+     *            application.properties.
      * @return The configured JavaMailSender instance.
      */
     @Bean

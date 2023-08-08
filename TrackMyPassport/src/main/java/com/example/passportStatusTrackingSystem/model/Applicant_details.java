@@ -1,4 +1,3 @@
-
 package com.example.passportStatusTrackingSystem.model;
 
 import java.sql.Date;
@@ -8,14 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * This class represents the Applicant_details entity in the application.
- * It is used to store and manage applicant details for passport status
- * tracking.
- */
 @Entity
 public class Applicant_details {
-	// Properties representing various applicant details
 
 	/** Unique application ID assigned to each applicant */
 	@Id

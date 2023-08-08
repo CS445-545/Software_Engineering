@@ -2,19 +2,19 @@ package com.example.passportStatusTrackingSystem.service;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+
 import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+
 import com.example.passportStatusTrackingSystem.model.Mail;
 
-/**
-This service class provides implementations for sending emails using the Spring Boot JavaMailSender.
-*/
 @Service("mailService")
 public class MailServiceImpl implements MailService {
 
@@ -25,8 +25,10 @@ public class MailServiceImpl implements MailService {
 	 * Sends an email with an attachment (PDF) to the provided recipient email
 	 * address.
 	 *
-	 * @param mail        The Mail object containing email details.
-	 * @param applicantId The ID of the applicant for whom the email is being sent.
+	 * @param mail
+	 *            The Mail object containing email details.
+	 * @param applicantId
+	 *            The ID of the applicant for whom the email is being sent.
 	 * @return 1 if the email is sent successfully, otherwise 0.
 	 */
 	public int sendEmail(Mail mail, long applicantId) {
@@ -55,7 +57,8 @@ public class MailServiceImpl implements MailService {
 	 * Sends a simple email without an attachment to the provided recipient email
 	 * address.
 	 *
-	 * @param mail The Mail object containing email details.
+	 * @param mail
+	 *            The Mail object containing email details.
 	 * @return 1 if the email is sent successfully, otherwise 0.
 	 */
 	public int sendEmail(Mail mail) {
