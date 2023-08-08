@@ -1,5 +1,5 @@
 # TrackMyPassport
-Link to the set up and work flow document - https://drive.google.com/file/d/1LXgV2PMbzmUymLL4ue_jj8bBoUhO1Hkl/view?usp=drive_link
+Link to the set up and work flow document - https://drive.google.com/file/d/1I31awKyR5Zhiv0Z2lwAI4_1boZRwu18k/view?usp=drive_link
 
 Link to the design document - https://docs.google.com/document/d/1GTrhDMapBnnqRzrptBS2fNExgqlWL5nA/edit?usp=drive_link&ouid=105881010644857215437&rtpof=true&sd=true
 
@@ -87,15 +87,21 @@ Link to the design document - https://docs.google.com/document/d/1GTrhDMapBnnqRz
     j.	Applicants whose passport have expired can renew their passports by clicking on the ‘Applicant Login’ on the main home page.
     
     k.	It’s status will be displayed if there is no exception.
+
+  	 l.	If applicant forget’s it’s application id. It has to go the applicant login and click on the forget password.
+ 
+    m.	The application details will be sent to the registered email id. Applicants can then go back and click on ’ Track Status’ to see their status.
+
+    n.	The username and password for admin login is ‘admin’. Only admins can login to the admin section using the username and password.
      
-    l.	The username and password for admin login is ‘admin’. Only admins can login to the admin section using the username and password.
-     
-    m.	Admin’s are of two types Passport officer and Police officer. Applicants details will be first approved by Passport Officer and only then it will go to 
+    o.	Admin’s are of two types Passport officer and Police officer. Applicants details will be first approved by Passport Officer and only then it will go to 
        the police Officer. Applicants details will be pop up on their pages on the date when Applicants have booked their appointment.
 
-9) After running the application you can click on the ‘stop’ button for both Apache and MySQL.
+10) After running the application you can click on the ‘stop’ button for both Apache and MySQL.
  
 Used 'https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/' for reference
+
+Used 'https://reflectoring.io/spring-boot-web-controller-test/' for reference to write unit test cases.
 
 
 
