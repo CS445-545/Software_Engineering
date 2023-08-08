@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Status Tracking System</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style type="text/css">
+         section {
+         padding: .1em;
+         }
+         .hero {
+         padding: .1em;
+         }
+         .table {
+         margin-bottom: 0;
+         }
+         
+         
+         
+        
+        
+        
+         
+        
+         tr.table-row {
+         border-top: 1px solid #F3F3F4;
+         }
+         .table {
+         margin-bottom: 0;
+         }
+         .table-bordered, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th,
+         .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th,
+         .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+         border: 1px solid #F5F5F5;
+         }
+         .table {
+         width: 100%;
+         max-width: 100%;
+         margin-bottom: 18px;
+         }
+         pre code, table {
+         background-color: transparent;
+         }
+         table {
+         border-collapse: collapse;
+         border-spacing: 0;
+         }
+         .table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th,
+         .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th,
+         .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th
+         {
+         border-top: 0;
+         }
+         
+        
+         .table>thead>tr>th {
+         background-color: #fff;
+         vertical-align: middle;
+         font-weight: 500;
+         color: #333;
+         border-width: 1px;
+         }
+         .btn, .m-sidebar header h2, .p-menu>li>a, .popover-title, .table>thead>tr>th
+         {
+         text-transform: uppercase;
+         }
+         .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+         border-bottom-width: 2px;
+         }
+         
+         .table>thead>tr>th {
+         vertical-align: bottom;
+         border-bottom: 2px solid #F5F5F5;
+         }
+         .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th,
+         .table>thead>tr>td, .table>thead>tr>th {
+         padding: 15px;
+         line-height: 1.42857143;
+         vertical-align: top;
+         border-top: 1px solid #F5F5F5;
+         }
+      </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#"><span>Passport</span> Status</a>
+
+            <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Open Navigation">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
+                
+                <ul class="primary-nav">
+                    <li class="current"><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+
+                <ul class="secondary-nav">
+                    <li class="go-premium-cta"><a href="login">Home</a></li>
+                    <li><a href="#"></a></li>
+                    <li class="go-premium-cta"><a href="welcomeAdmin">Admin dashboard</a></li>
+                    <li><a href="#"></a></li>
+                    <li class="go-premium-cta"><a href="viewApplicant">Passport Office Approval</a></li>
+                    <li><a href="#"></a></li>
+                    <li class="go-premium-cta"><a href="loginAdmin">logout</a></li>                
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div >
+            <div class="left-col">
+                <div class="agileinfo-grap">
+               <div class="agileits-box">
+                  <div id="page-wrapper" >
+                     <div id="page-inner">
+                        <div class="row">
+                           <h2>Police Approval Request </h2>
+                           <div class="col-md-12">
+                              <table border="0" id="displaytable" class="table table-bordered" style="padding-right:80px;"  >
+                                 <thead>
+                                    <tr>
+                                       <th>ID</th>
+                                       <th>First Name</th>
+                                       <th>Last Name</th>
+                                       <th>Date of Birth</th>
+                                       <th>Gender</th>
+                                       <th>Address</th>
+                                       <th>SSN number</th>
+                                       <th>Mobile Number</th>
+                                       <th>Approve</th>
+                                       <th>Reject</th>
+                                    </tr>
+                                 </thead>
+                                    <tbody>
+                                    <tr th:each="applicantDetails : ${listApplicant}">
+                                       <th th:text="${applicantDetails.application_id}">Id</td>
+                                       <th th:text="${applicantDetails.first_name}" >First Name</td>
+                                       <th th:text="${applicantDetails.last_name}">Last Name</th>
+                                       <th th:text="${applicantDetails.dob}">Date of Birth</th>
+                                       <th th:text="${applicantDetails.gender}">Gender</th>
+                                       <th th:text="${applicantDetails.address}">Address</th>
+                                       <th th:text="${applicantDetails.ssn_no}">SSN number</th>
+                                       <th th:text="${applicantDetails.mobile_no}">Mobile Number</th>
+                                       <th><a th:href="@{/approve/{applicationId}/police(applicationId=${applicantDetails.application_id})}">Approve Request</a></th>
+                                       <th><a th:href="@{/reject/{applicationId}/police(applicationId=${applicantDetails.application_id})}">Reject Request</a>    </th>
+                                    </tr>
+                                 </tbody>
+                                
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div>
+
+      
+        </div>
+    </section>
+
+    <script>
+
+        const mobileBtn = document.getElementById('mobile-cta')
+              nav = document.querySelector('nav')
+              mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        })
+
+
+
+    </script>
+
+</body>
+</html>

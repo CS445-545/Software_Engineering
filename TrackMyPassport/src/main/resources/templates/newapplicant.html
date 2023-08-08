@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Passport Status Tracking System</title>
+      <link rel="stylesheet" href="css/main.css">
+     
+      <style>
+         
+         .hero {
+         padding: 3em;
+         }
+        
+         .agileinfo-grap {
+         position: center;
+         padding: 1em;
+         width: 50%;
+         border: 1px solid #e7ebee;
+         margin-bottom: 2em;
+         margin-left:20em;
+         box-shadow: 0 1px 2px rgba(0,0,0,.05);
+         -o-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+         -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+         -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+         }
+         .button {
+         position: center;
+         background-color: #008DE7;
+         border: none;
+         font-size: 28px;
+         color: #FFFFFF;
+         text-align: center;
+         -webkit-transition-duration: 0.4s; /* Safari */
+         transition-duration: 0.4s;
+         text-decoration: none;
+         overflow: hidden;
+         cursor: pointer;
+         }
+         
+      </style>
+   </head>
+   <body>
+      <div class="navbar">
+         <div class="container">
+            <a class="logo" href="#"><span>Passport</span> Status</a>
+            <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Open Navigation">
+            <nav>
+               <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
+               <ul class="primary-nav">
+                  <li class="current"><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+               </ul>
+               <ul class="secondary-nav">
+                  <li class="go-premium-cta"><a href="login">Home</a></li>
+<!--                      <li><a href="#"></a></li> 
+                  <li class="go-premium-cta"><a href="login">Logout</a></li> -->
+               </ul>
+            </nav>
+         </div>
+      </div>
+      <section class="hero">
+            <div class="agileinfo-grap">
+               <h2 style="text-align: center;">Passport Application</h2>
+            <div class="agileits-box">
+                     <h4>
+                        <b>
+                           <span style="color:#FF3F4A;" th:if="${logError != null}" class="error">
+                              SSN Number Already Present! Please Recheck!
+                              </span>
+                           
+                        </b>
+                     </h4>
+                     <form th:action="@{/save}" action="#" onsubmit="return validateform();"  method="post"  th:object="${applicantDetails}">
+                        <div class="form-group row">
+                           <label for="inputEmail3" class="col-sm-3 form-control-label">First Name</label>
+                           <div class="col-sm-9">
+                              <input type="text" cols="7" rows="1" class="form-control" th:field="*{first_name}" name="firstname" placeholder="Enter First Name" required></input>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputEmail3" class="col-sm-3 form-control-label">Last Name</label>
+                           <div class="col-sm-9">
+                              <input type="text" cols="7" rows="1" class="form-control" name="lastname"  th:field="*{last_name}" placeholder="Enter Last Name" required></input>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputEmail3" class="col-sm-3 form-control-label">Date of Birth</label>
+                           <div class="col-sm-9">
+                              <input type="date" cols="7" rows="1" class="form-control" name="dob"  th:field="*{dob}" placeholder="Enter Date of Birth" required></input>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <div class="bootstrap-demo">
+                              <label for="inputEmail3" class="form-control-label">Gender</label>
+                              <label class="checkbox-inline">
+                              <input type="checkbox" id="male" value="Male" th:field="*{gender}"> Male
+                              </label>
+                              <label class="checkbox-inline">
+                              <input type="checkbox" id="inlineCheckbox2" value="Female"th:field="*{gender}" > Female 
+                              </label>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputEmail3" class="col-sm-3 form-control-label">Address</label>
+                           <div class="col-sm-9">
+                              <input type="text" cols="7" rows="1" class="form-control" name="address" th:field="*{address}" placeholder="Enter Address" required></input>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label  class="col-sm-3 form-control-label">Email</label>
+                           <div class="col-sm-9">
+                              <input type="email" cols="7" rows="1" class="form-control" name="emailid" th:field="*{email_id}" placeholder="Enter Email ID" onblur="validateEmail(this);" required></input>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputEmail3" class="col-sm-3 form-control-label">SSN Number</label>
+                           <div class="col-sm-9">
+                              <input type="number"  rows="1" class="form-control" min="100000000" max="999999999" name="Ssnno" th:field="*{ssn_no}" placeholder="Enter SSN Number"   required/>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label  class="col-sm-3 form-control-label">Birth place</label>
+                           <div class="col-sm-9">
+                              <input type="text" cols="7" rows="1" class="form-control" name="birthplace" th:field="*{birth_place}" placeholder="Enter birth place" required></input>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label  class="col-sm-3 form-control-label">Mobile Number</label>
+                           <div class="col-sm-9">
+                              <input type="text" cols="7" rows="1" class="form-control" name="mobile_no"  th:field="*{mobile_no}" placeholder="Enter Mobile Number"   maxlength="10" required></input>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label for="inputEmail3" class="col-sm-3 form-control-label">Date of Appointment</label>
+                           <div class="col-sm-9">
+                              <input type="date" cols="7" rows="1" class="form-control" name="appointment_date"  th:field="*{appointment_date}" placeholder="Enter Date of Appointment" required></input>
+                           </div>
+                        </div>
+                        <div class="form-group mb-n"  style="text-align: center;">
+                        <button type="submit" class="button">Register</button>
+                     </div>
+                     </form>
+                  </div>
+        </div>
+      </section>
+      <script>
+         const mobileBtn = document.getElementById('mobile-cta')
+               nav = document.querySelector('nav')
+               mobileBtnExit = document.getElementById('mobile-exit');
+         
+         mobileBtn.addEventListener('click', () => {
+             nav.classList.add('menu-btn');
+         })
+         
+         mobileBtnExit.addEventListener('click', () => {
+             nav.classList.remove('menu-btn');
+         })
+         
+      </script>
+   </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Status Tracking System</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 400px;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.left-col .primary-cta {
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: .2em 1.3em;
+    font-size: 1.4em;
+    border-radius: 5em;
+    font-weight: bold;
+    display: inline-block;
+}
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#"><span>Passport</span> Status</a>
+
+            <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Open Navigation">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
+                
+                <ul class="primary-nav">
+                    <li class="current"><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+
+                <ul class="secondary-nav">
+                    <li class="go-premium-cta"><a href="login">Home</a></li>
+                    <li><a href="#"></a></li>
+                    <!-- <li class="go-premium-cta"><a href="viewApplicant">Passport office approval</a></li>
+                    <li><a href="#"></a></li>
+                    <li class="go-premium-cta"><a href="viewApplicant2">Police approval</a></li>
+                    <li><a href="#"></a></li> -->
+                    <li class="go-premium-cta"><a href="login">Logout</a></li>                
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1 style="text-align: center;">Admin Dashboard</h1>
+        <div class="container">
+            <div class="left-col">
+                <div class="column">
+                    <div class="card">
+                        <p class="subhead">Passport Office Approval</p>
+                        <div>
+                            <a href="viewApplicant" class="primary-cta">open</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-col">
+                 <div class="column">
+                    <div class="card">
+                        <p class="subhead">Police Approval</p>
+                        <div>
+                            <a href="viewApplicant2" class="primary-cta">open</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        const mobileBtn = document.getElementById('mobile-cta')
+              nav = document.querySelector('nav')
+              mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        })
+
+
+
+    </script>
+
+</body>
+</html>
