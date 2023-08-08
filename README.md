@@ -6,7 +6,7 @@ Link to the set up and work flow document - https://drive.google.com/file/d/1I31
 
 Link to the design document - https://docs.google.com/document/d/1GTrhDMapBnnqRzrptBS2fNExgqlWL5nA/edit?usp=drive_link&ouid=105881010644857215437&rtpof=true&sd=true
 
-# SETUP FOR THE PROJECT
+# Set up for the project
 
 1)	Create a folder ‘Deveopment_avecto’ in C Drive.
  
@@ -55,7 +55,7 @@ Link to the design document - https://docs.google.com/document/d/1GTrhDMapBnnqRz
     h.	Click on ‘new’ and add- ‘%MAVEN_HOME%\bin’.
    
 
-# PROJECT DEMO
+# Project Demo
 
 1)	Open Visual Studio Code and go to ‘File’ and then ‘Open folder’
  
@@ -102,7 +102,7 @@ Link to the design document - https://docs.google.com/document/d/1GTrhDMapBnnqRz
 
 10) After running the application you can click on the ‘stop’ button for both Apache and MySQL.
 
-# REFERENCES
+# References
  
 Used 'https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/' for reference
 
