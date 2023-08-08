@@ -1,4 +1,7 @@
-# TrackMyPassport
+# TrackMyPassport 
+
+# Links for the design document and set up and workflow document
+
 Link to the set up and work flow document - https://drive.google.com/file/d/1I31awKyR5Zhiv0Z2lwAI4_1boZRwu18k/view?usp=drive_link
 
 Link to the design document - https://docs.google.com/document/d/1GTrhDMapBnnqRzrptBS2fNExgqlWL5nA/edit?usp=drive_link&ouid=105881010644857215437&rtpof=true&sd=true
@@ -98,6 +101,8 @@ Link to the design document - https://docs.google.com/document/d/1GTrhDMapBnnqRz
        the police Officer. Applicants details will be pop up on their pages on the date when Applicants have booked their appointment.
 
 10) After running the application you can click on the ‘stop’ button for both Apache and MySQL.
+
+# REFERENCES
  
 Used 'https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/' for reference
 
