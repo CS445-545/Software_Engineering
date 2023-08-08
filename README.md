@@ -1,6 +1,6 @@
 # TrackMyPassport 
 
-# Links for the design document and set up and workflow document
+# Links for the documents
 
 Link to the set up and work flow document - https://drive.google.com/file/d/1I31awKyR5Zhiv0Z2lwAI4_1boZRwu18k/view?usp=drive_link
 
