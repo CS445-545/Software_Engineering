@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Applicant_details {
+public class applicantDetails {
 
 	/** Unique application ID assigned to each applicant */
 	@Id

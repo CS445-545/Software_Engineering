@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h4><b><center><span style="color:#FF3F4A;" th:if="${logError != null}" class="error">
 			Invalid OTP! Please Recheck!
 		</span></center></b></h4>
-		 <form th:action="@{/compareOTP}" method="post" th:object="${applicant_details}">
+		 <form th:action="@{/compareOTP}" method="post" th:object="${applicantDetails}">
 			<div class="username">
 				<span>OTP</span>
 				<input type="number" th:field="*{otp}" class="name" placeholder="Enter the OTP sent on registerd Email ID" required="">

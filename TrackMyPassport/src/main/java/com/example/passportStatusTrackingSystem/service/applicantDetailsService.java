@@ -14,32 +14,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.passportStatusTrackingSystem.model.Applicant_details;
-import com.example.passportStatusTrackingSystem.repository.Applicant_detailsRepository;
+import com.example.passportStatusTrackingSystem.model.applicantDetails;
+import com.example.passportStatusTrackingSystem.repository.applicantDetailsRepository;
 
 @Service
 @Transactional
-public class Applicant_detailsService {
+public class applicantDetailsService {
 	@Autowired
-	private Applicant_detailsRepository repo;
+	private applicantDetailsRepository repo;
 
 	/* Retrieves all applicants' details */
-	public List<Applicant_details> listAll() {
+	public List<applicantDetails> listAll() {
 		return repo.findAll();
 	}
 
 	/* Saves applicant details */
-	public void save(Applicant_details applicant_details) {
-		repo.save(applicant_details);
+	public void save(applicantDetails applicantDetails) {
+		repo.save(applicantDetails);
 	}
 
 	/* Retrieves applicants' details based on status */
-	public List<Applicant_details> listStatus(int status) {
+	public List<applicantDetails> listStatus(int status) {
 		return repo.findByCurrentDateAndStatus(status);
 	}
 
 	/* Retrieves an applicant's details by application ID */
-	public Applicant_details get(long application_id) {
+	public applicantDetails get(long application_id) {
 		return repo.findById(application_id).get();
 	}
 
@@ -49,23 +49,23 @@ public class Applicant_detailsService {
 	}
 
 	/* Updates an applicant's flag status */
-	public Applicant_details update(long applicationId) {
-		Applicant_details applicant_details = repo.findById(applicationId).get();
-		applicant_details.setFlag(2);
-		repo.save(applicant_details);
-		return applicant_details;
+	public applicantDetails update(long applicationId) {
+		applicantDetails applicantDetails = repo.findById(applicationId).get();
+		applicantDetails.setFlag(2);
+		repo.save(applicantDetails);
+		return applicantDetails;
 
 	}
 
 	/* Retrieves an applicant's details without updating */
-	public Applicant_details update1(long applicationId) {
-		Applicant_details applicant_details = repo.findById(applicationId).get();
-		return applicant_details;
+	public applicantDetails update1(long applicationId) {
+		applicantDetails applicantDetails = repo.findById(applicationId).get();
+		return applicantDetails;
 
 	}
 
 	/* Updates an applicant's flag and police-related details */
-	public Applicant_details updatePolice(long applicationId) {
+	public applicantDetails updatePolice(long applicationId) {
 		long millis = System.currentTimeMillis();
 		java.sql.Date currentDate = new java.sql.Date(millis);
 		LocalDate localDate = currentDate.toLocalDate();
@@ -73,65 +73,65 @@ public class Applicant_detailsService {
 		int months = localDate.getMonthValue();
 		int years = localDate.getYear() + 10;
 		java.sql.Date endDate = java.sql.Date.valueOf(years + "-" + months + "-" + day);
-		Applicant_details applicant_details = repo.findById(applicationId).get();
-		applicant_details.setFlag(3);
-		applicant_details.setStart_date(new java.sql.Date(millis));
-		applicant_details.setEnd_date(endDate);
-		applicant_details.setPassport_id(applicant_details.getApplication_id() + 100);
-		repo.save(applicant_details);
-		return applicant_details;
+		applicantDetails applicantDetails = repo.findById(applicationId).get();
+		applicantDetails.setFlag(3);
+		applicantDetails.setStart_date(new java.sql.Date(millis));
+		applicantDetails.setEnd_date(endDate);
+		applicantDetails.setPassport_id(applicantDetails.getApplication_id() + 100);
+		repo.save(applicantDetails);
+		return applicantDetails;
 	}
 
 	/* Sets the flag to indicate a passport officer request deletion */
 	public void deletePoRequest(long applicationId) {
-		Applicant_details applicant_details = repo.findById(applicationId).get();
-		applicant_details.setFlag(4);
-		repo.save(applicant_details);
+		applicantDetails applicantDetails = repo.findById(applicationId).get();
+		applicantDetails.setFlag(4);
+		repo.save(applicantDetails);
 	}
 
 	/* Sets the flag to indicate a police request deletion */
 	public void deletePoliceRequest(long applicationId) {
-		Applicant_details applicant_details = repo.findById(applicationId).get();
-		applicant_details.setFlag(5);
-		repo.save(applicant_details);
+		applicantDetails applicantDetails = repo.findById(applicationId).get();
+		applicantDetails.setFlag(5);
+		repo.save(applicantDetails);
 	}
 
 	/* Tracks applicant details using application ID and date of birth */
-	public Applicant_details trackDetails(long applicationId, Date dob) {
-		Applicant_details applicant_details = repo.findByIdAndDob(applicationId, dob);
-		return applicant_details;
+	public applicantDetails trackDetails(long applicationId, Date dob) {
+		applicantDetails applicantDetails = repo.findByIdAndDob(applicationId, dob);
+		return applicantDetails;
 	}
 
 	/* Finds applicant details by email ID */
-	public Applicant_details findByEmailId(String emailId) {
+	public applicantDetails findByEmailId(String emailId) {
 		return repo.findByEmailId(emailId);
 	}
 
 	/* Finds applicant details by SSN */
-	public Applicant_details findBySsn(long ssn_id) {
+	public applicantDetails findBySsn(long ssn_id) {
 		return repo.findBySsnId(ssn_id);
 	}
 
 	/* Finds applicant details by passport ID */
-	public Applicant_details findByPassportId(long passportId) {
+	public applicantDetails findByPassportId(long passportId) {
 		return repo.findByPassportId(passportId);
 	}
 
 	/* Generates a PDF with applicant passport information */
 	public void pdfCreation(long applicantId) {
 		String filepath = "C:\\Deveopment_avecto\\" + applicantId + "simple.pdf";
-		Applicant_details applicant_details_pdf = repo.findById(applicantId).get();
-		String passportID = Long.toString(applicant_details_pdf.getPassport_id());
-		String F_Name = applicant_details_pdf.getFirst_name();
-		String L_name = applicant_details_pdf.getLast_name();
-		Date DOB = applicant_details_pdf.getDob();
+		applicantDetails applicantDetails_pdf = repo.findById(applicantId).get();
+		String passportID = Long.toString(applicantDetails_pdf.getPassport_id());
+		String F_Name = applicantDetails_pdf.getFirst_name();
+		String L_name = applicantDetails_pdf.getLast_name();
+		Date DOB = applicantDetails_pdf.getDob();
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		String Dob = formatter.format(DOB);
-		String Gender = applicant_details_pdf.getGender();
-		String Address = applicant_details_pdf.getAddress();
-		Date Strt_Date = applicant_details_pdf.getStart_date();
+		String Gender = applicantDetails_pdf.getGender();
+		String Address = applicantDetails_pdf.getAddress();
+		Date Strt_Date = applicantDetails_pdf.getStart_date();
 		String Start_date = formatter.format(Strt_Date);
-		Date End_Date = applicant_details_pdf.getEnd_date();
+		Date End_Date = applicantDetails_pdf.getEnd_date();
 		String end_date = formatter.format(End_Date);
 		try {
 			PDDocument document = new PDDocument();

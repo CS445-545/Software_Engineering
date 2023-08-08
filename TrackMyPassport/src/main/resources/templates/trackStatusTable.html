@@ -183,19 +183,19 @@
                         <th>1</th>
                         <th>Application Submission</th>
                         <th>Completed</th>
-                        <th th:text="${applicant_details.application_id}"></th>
+                        <th th:text="${applicantDetails.application_id}"></th>
                      </tr>
                      <tr>
                         <th>2</th>
                         <th>Appointment Date</th>
                         <th>Completed</th>
-                        <th th:text="${applicant_details.appointment_date}"></th>
+                        <th th:text="${applicantDetails.appointment_date}"></th>
                      </tr>
                      <tr>
                         <th>3</th>
                         <th>Passport Office Status</th>
                         <th>
-                           <span th:switch="${applicant_details.flag}">
+                           <span th:switch="${applicantDetails.flag}">
                               <p th:case="1">Pending</p>
                               <p th:case="2">Completed</p>
                               <p th:case="3">Completed</p>
@@ -204,7 +204,7 @@
                            </span>
                         </th>
                         <th>
-                           <span th:switch="${applicant_details.flag}">
+                           <span th:switch="${applicantDetails.flag}">
                               <p th:case="1">Waiting for PO Approval</p>
                               <p th:case="2">PO Approved</p>
                               <p th:case="3">PO Approved</p>
@@ -216,24 +216,24 @@
                      <tr>
                         <th>4</th>
                         <th>Police verification Status</th>
-                        <th><span th:if="${applicant_details.flag==2 }">Pending</span>
-                           <span th:if="${applicant_details.flag==3 }">completed</span> <span
-                              th:if="${applicant_details.flag==5 }">Police Rejected</span>
+                        <th><span th:if="${applicantDetails.flag==2 }">Pending</span>
+                           <span th:if="${applicantDetails.flag==3 }">completed</span> <span
+                              th:if="${applicantDetails.flag==5 }">Police Rejected</span>
                         </th>
-                        <th><span th:if="${applicant_details.flag==2 }">Waiting
-                           for Police Approval</span> <span th:if="${applicant_details.flag==3 }">Police
-                           Approved</span> <span th:if="${applicant_details.flag==5 }">Police
+                        <th><span th:if="${applicantDetails.flag==2 }">Waiting
+                           for Police Approval</span> <span th:if="${applicantDetails.flag==3 }">Police
+                           Approved</span> <span th:if="${applicantDetails.flag==5 }">Police
                            Rejected</span>
                         </th>
                      </tr>
                      <tr>
                         <th>5</th>
                         <th>E-passport</th>
-                        <th><span th:if="${applicant_details.flag==2 }">Pending</span>
-                           <span th:if="${applicant_details.flag==3 }">Completed</span>
+                        <th><span th:if="${applicantDetails.flag==2 }">Pending</span>
+                           <span th:if="${applicantDetails.flag==3 }">Completed</span>
                         </th>
-                        <th><span th:if="${applicant_details.flag==2 }">E-Passport
-                           Pending</span> <span th:if="${applicant_details.flag==3 }">E-Passport
+                        <th><span th:if="${applicantDetails.flag==2 }">E-Passport
+                           Pending</span> <span th:if="${applicantDetails.flag==3 }">E-Passport
                            Generated</span>
                         </th>
                      </tr>

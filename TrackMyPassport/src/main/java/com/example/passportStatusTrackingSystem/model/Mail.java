@@ -10,7 +10,7 @@ import java.util.List;
  * sender, recipients, subject, content, and attachments.
  * Reference: https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/
  */
-public class Mail {
+public class mail {
     // Properties representing email details
 
     /** The sender email address */
@@ -40,7 +40,7 @@ public class Mail {
     /**
      * Constructs a new Mail object with default content type as "text/plain".
      */
-    public Mail() {
+    public mail() {
         contentType = "text/plain";
     }
 

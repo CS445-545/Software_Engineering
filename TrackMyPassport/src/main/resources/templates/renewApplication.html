@@ -77,7 +77,7 @@
                <h4><b><center><span style="color:#FF3F4A;" th:if="${logError != null}" class="error">
 			Passport Number Wrong! Please Recheck!
 		</span></center></b></h4>
-                  <form th:action="@{/save1}" action="#" onsubmit="return validateform();"  method="post"  th:object="${applicant_details}">
+                  <form th:action="@{/save1}" action="#" onsubmit="return validateform();"  method="post"  th:object="${applicantDetails}">
                      <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 form-control-label">Address</label>
                         <div class="col-sm-9">

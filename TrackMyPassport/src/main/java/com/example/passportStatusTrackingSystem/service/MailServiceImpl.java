@@ -13,10 +13,10 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import com.example.passportStatusTrackingSystem.model.Mail;
+import com.example.passportStatusTrackingSystem.model.mail;
 
 @Service("mailService")
-public class MailServiceImpl implements MailService {
+public class mailServiceImpl implements mailService {
 
 	@Autowired
 	JavaMailSender mailSender;
@@ -26,12 +26,12 @@ public class MailServiceImpl implements MailService {
 	 * address.
 	 *
 	 * @param mail
-	 *            The Mail object containing email details.
+	 *                    The Mail object containing email details.
 	 * @param applicantId
-	 *            The ID of the applicant for whom the email is being sent.
+	 *                    The ID of the applicant for whom the email is being sent.
 	 * @return 1 if the email is sent successfully, otherwise 0.
 	 */
-	public int sendEmail(Mail mail, long applicantId) {
+	public int sendEmail(mail mail, long applicantId) {
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 		int flag = 0;
 		try {
@@ -58,10 +58,10 @@ public class MailServiceImpl implements MailService {
 	 * address.
 	 *
 	 * @param mail
-	 *            The Mail object containing email details.
+	 *             The Mail object containing email details.
 	 * @return 1 if the email is sent successfully, otherwise 0.
 	 */
-	public int sendEmail(Mail mail) {
+	public int sendEmail(mail mail) {
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 		int flag = 0;
 		try {

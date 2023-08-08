@@ -11,34 +11,18 @@ import javax.persistence.Id;
  * tracking system.
  */
 @Entity
-public class Login_details {
+public class loginDetails {
     // Properties representing user login details
-
-    /** Unique application ID assigned to each login detail */
+    /** Email ID of the applicant (also used as the primary key) */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long application_id;
-
+    private String email_id;
     /** User name of the applicant */
     private String user_name;
-
-    /** Email ID of the applicant (also used as the primary key) */
-    private String email_id;
 
     /** Password of the applicant's account */
     private String password;
 
     // Getters and setters for accessing login details
-
-    /** Get the unique application ID assigned to each login detail */
-    public long getApplication_id() {
-        return application_id;
-    }
-
-    /** Set the unique application ID for the login detail */
-    public void setApplication_id(long application_id) {
-        this.application_id = application_id;
-    }
 
     /** Get the user name of the applicant */
     public String getUser_name() {

@@ -1,9 +1,9 @@
 package com.example.passportStatusTrackingSystem.service;
 
-import com.example.passportStatusTrackingSystem.model.Mail;
+import com.example.passportStatusTrackingSystem.model.mail;
 
 
-public interface MailService {
+public interface mailService {
 	/**
 	 * Sends an email using the provided Mail object and returns an integer status
 	 * code.
@@ -12,7 +12,7 @@ public interface MailService {
 	 *            The Mail object containing email details.
 	 * @return 1 if the email is sent successfully, otherwise 0.
 	 */
-	public int sendEmail(Mail mail);
+	public int sendEmail(mail mail);
 
 	/**
 	 * Sends an email using the provided Mail object and applicant ID, and returns
@@ -26,6 +26,6 @@ public interface MailService {
 	 *            The ID of the applicant for whom the email is being sent.
 	 * @return 1 if the email is sent successfully, otherwise 0.
 	 */
-	public int sendEmail(Mail mail, long applicantId);
+	public int sendEmail(mail mail, long applicantId);
 
 }

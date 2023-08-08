@@ -10,8 +10,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 @Configuration
-@EnableConfigurationProperties(MailConfiguration.MailProperties.class)
-public class MailConfiguration {
+@EnableConfigurationProperties(mailConfiguration.MailProperties.class)
+public class mailConfiguration {
 
     /**
      * Configures and returns the JavaMailSender bean, which will be used to send

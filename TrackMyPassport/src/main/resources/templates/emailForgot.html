@@ -29,7 +29,7 @@
          <div class="container">
             <div class="sin-w3-agile">
                <h2> Recover Details</h2>
-               <form  th:action="@{/sendOtp}" method="post" th:object="${login_details}">
+               <form  th:action="@{/sendOtp}" method="post" th:object="${loginDetails}">
                   <div class="username">
                      <span class="Email Id">Email</span>
                      <input type="text" name="name" th:field="*{email_id}" class="name" placeholder="Enter a valid Email ID" required="">

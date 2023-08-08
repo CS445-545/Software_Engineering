@@ -137,17 +137,17 @@
                                     </tr>
                                  </thead>
                                     <tbody>
-                                    <tr th:each="applicant_details : ${listApplicant}">
-                                       <th th:text="${applicant_details.application_id}">Id</td>
-                                       <th th:text="${applicant_details.first_name}" >First Name</td>
-                                       <th th:text="${applicant_details.last_name}">Last Name</th>
-                                       <th th:text="${applicant_details.dob}">Date of Birth</th>
-                                       <th th:text="${applicant_details.gender}">Gender</th>
-                                       <th th:text="${applicant_details.address}">Address</th>
-                                       <th th:text="${applicant_details.ssn_no}">SSN number</th>
-                                       <th th:text="${applicant_details.mobile_no}">Mobile Number</th>
-                                       <th><a th:href="@{/approve/{applicationId}/police(applicationId=${applicant_details.application_id})}">Approve Request</a></th>
-                                       <th><a th:href="@{/reject/{applicationId}/police(applicationId=${applicant_details.application_id})}">Reject Request</a>    </th>
+                                    <tr th:each="applicantDetails : ${listApplicant}">
+                                       <th th:text="${applicantDetails.application_id}">Id</td>
+                                       <th th:text="${applicantDetails.first_name}" >First Name</td>
+                                       <th th:text="${applicantDetails.last_name}">Last Name</th>
+                                       <th th:text="${applicantDetails.dob}">Date of Birth</th>
+                                       <th th:text="${applicantDetails.gender}">Gender</th>
+                                       <th th:text="${applicantDetails.address}">Address</th>
+                                       <th th:text="${applicantDetails.ssn_no}">SSN number</th>
+                                       <th th:text="${applicantDetails.mobile_no}">Mobile Number</th>
+                                       <th><a th:href="@{/approve/{applicationId}/police(applicationId=${applicantDetails.application_id})}">Approve Request</a></th>
+                                       <th><a th:href="@{/reject/{applicationId}/police(applicationId=${applicantDetails.application_id})}">Reject Request</a>    </th>
                                     </tr>
                                  </tbody>
                                 
