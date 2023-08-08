@@ -23,7 +23,6 @@ import org.springframework.ui.ConcurrentModel;
 
 import com.example.passportStatusTrackingSystem.model.applicantDetails;
 import com.example.passportStatusTrackingSystem.model.loginDetails;
-import com.example.passportStatusTrackingSystem.model.mail;
 import com.example.passportStatusTrackingSystem.service.applicantDetailsService;
 import com.example.passportStatusTrackingSystem.service.loginDetailsService;
 import com.example.passportStatusTrackingSystem.service.mailService;
