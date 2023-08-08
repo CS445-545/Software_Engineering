@@ -69,7 +69,7 @@ public class mainController {
 	 * Displays the list of applicants' details for Passport Officer approval.
 	 * 
 	 * @param model
-	 *              The model to store attributes.
+	 *            The model to store attributes.
 	 * @return The view name of the page displaying applicant details for Passport
 	 *         Officer.
 	 */
@@ -86,7 +86,7 @@ public class mainController {
 	 * Displays the list of applicants' details for Police Officer approval.
 	 * 
 	 * @param model
-	 *              The model to store attributes.
+	 *            The model to store attributes.
 	 * @return The view name of the page displaying applicant details for Police
 	 *         Officer.
 	 */
@@ -114,7 +114,7 @@ public class mainController {
 	 * Displays the login page for existing applicant users.
 	 *
 	 * @param model
-	 *              The model to store attributes.
+	 *            The model to store attributes.
 	 * @return The view name for the existing applicant login page.
 	 */
 	@RequestMapping(value = "/existingApplicantLogin")
@@ -130,9 +130,9 @@ public class mainController {
 	 * Displays the status table of the applicant.
 	 *
 	 * @param model
-	 *                         The model to store attributes.
+	 *            The model to store attributes.
 	 * @param applicantDetails
-	 *                         The applicant details to track the status.
+	 *            The applicant details to track the status.
 	 * @return The view name for the status table page.
 	 */
 	@PostMapping(value = "/trackStatusTable")
@@ -170,7 +170,7 @@ public class mainController {
 	 * Displays the new applicant page.
 	 *
 	 * @param model
-	 *              The model to store attributes.
+	 *            The model to store attributes.
 	 * @return The view name for the new applicant page.
 	 */
 	@RequestMapping(value = "/newapplicant")
@@ -187,11 +187,11 @@ public class mainController {
 	 * details.
 	 *
 	 * @param model
-	 *                         The model to store attributes.
+	 *            The model to store attributes.
 	 * @param applicantDetails
-	 *                         The new applicant's details.
+	 *            The new applicant's details.
 	 * @param loginDetails
-	 *                         The login details.
+	 *            The login details.
 	 * @return The view name for the login page.
 	 */
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
@@ -231,9 +231,9 @@ public class mainController {
 	 * Saves the existing user's (applicant) appointment details.
 	 *
 	 * @param model
-	 *                         The model to store attributes.
+	 *            The model to store attributes.
 	 * @param applicantDetails
-	 *                         The existing applicant's details.
+	 *            The existing applicant's details.
 	 * @return The view name for the login page.
 	 */
 	@RequestMapping(value = "/save1", method = RequestMethod.POST)
@@ -272,7 +272,7 @@ public class mainController {
 	 * Displays the login page for existing applicant users.
 	 *
 	 * @param model
-	 *              The model to store attributes.
+	 *            The model to store attributes.
 	 * @return The view name for the existing applicant login page.
 	 */
 	@RequestMapping(value = "/loginTrackStatus")
@@ -287,7 +287,7 @@ public class mainController {
 	 * Displays the registration page for new users (applicants).
 	 *
 	 * @param model
-	 *              The model to store attributes.
+	 *            The model to store attributes.
 	 * @return The view name for the new user registration page.
 	 */
 	@RequestMapping(value = "/newUserRegister")
@@ -303,10 +303,10 @@ public class mainController {
 	 * Sends the user's password to their registered email.
 	 *
 	 * @param model
-	 *                     The model to store attributes.
+	 *            The model to store attributes.
 	 * @param loginDetails
-	 *                     The login details containing the email for password
-	 *                     retrieval.
+	 *            The login details containing the email for password
+	 *            retrieval.
 	 * @return The view name for the login page or an error page if email not found.
 	 */
 	@RequestMapping(value = "/sendPassword", method = RequestMethod.POST)
@@ -343,9 +343,9 @@ public class mainController {
 	 * Sends an OTP to the user's registered email for verification.
 	 *
 	 * @param model
-	 *                     The model to store attributes.
+	 *            The model to store attributes.
 	 * @param loginDetails
-	 *                     The login details containing the email for OTP sending.
+	 *            The login details containing the email for OTP sending.
 	 * @return The view name for the OTP verification page or an error page if email
 	 *         not found.
 	 */
@@ -385,10 +385,10 @@ public class mainController {
 	 * Retrieves existing applicant details for renewal.
 	 *
 	 * @param model
-	 *                      The model to store attributes.
+	 *            The model to store attributes.
 	 * @param loginDetails1
-	 *                      The login details containing the email and password for
-	 *                      validation.
+	 *            The login details containing the email and password for
+	 *            validation.
 	 * @return The view name for the application renewal page or the login page if
 	 *         credentials are invalid.
 	 */
@@ -411,7 +411,7 @@ public class mainController {
 	 * Displays the forgot password page.
 	 *
 	 * @param model
-	 *              The model to store attributes.
+	 *            The model to store attributes.
 	 * @return The view name for the forgot password page.
 	 */
 	@RequestMapping(value = "/emailForgot")
@@ -426,9 +426,9 @@ public class mainController {
 	 * email.
 	 *
 	 * @param model
-	 *                     The model to store attributes.
+	 *            The model to store attributes.
 	 * @param loginDetails
-	 *                     The login details containing the email for registration.
+	 *            The login details containing the email for registration.
 	 * @return The view name for OTP verification page or an error page if
 	 *         registration fails.
 	 */
@@ -477,9 +477,9 @@ public class mainController {
 	 * verification.
 	 *
 	 * @param model
-	 *                         The model to store attributes.
+	 *            The model to store attributes.
 	 * @param applicantDetails
-	 *                         The applicant details containing the entered OTP.
+	 *            The applicant details containing the entered OTP.
 	 * @return The view name for the new applicant registration page or an error
 	 *         page if OTP is incorrect.
 	 */
@@ -502,11 +502,11 @@ public class mainController {
 	 * password retrieval.
 	 *
 	 * @param model
-	 *                         The model to store attributes.
+	 *            The model to store attributes.
 	 * @param loginDetails
-	 *                         The login details containing the entered OTP.
+	 *            The login details containing the entered OTP.
 	 * @param applicantDetails
-	 *                         The applicant details containing the entered OTP.
+	 *            The applicant details containing the entered OTP.
 	 * @return The view name for the login page or an error page if OTP is
 	 *         incorrect.
 	 */
@@ -537,11 +537,11 @@ public class mainController {
 	 * Handles the approval of an application by the Passport Officer.
 	 *
 	 * @param model
-	 *                         The model to store attributes.
+	 *            The model to store attributes.
 	 * @param applicationId
-	 *                         The ID of the application to be approved.
+	 *            The ID of the application to be approved.
 	 * @param applicantDetails
-	 *                         The applicant details containing the application ID.
+	 *            The applicant details containing the application ID.
 	 * @return The view name for the applicant details page.
 	 */
 	@GetMapping(value = "/approve/{applicationId}/po")
@@ -564,11 +564,11 @@ public class mainController {
 	 * Handles the request when Passport Officer (PO) rejects an application.
 	 *
 	 * @param model
-	 *                         The model to store attributes.
+	 *            The model to store attributes.
 	 * @param applicationId
-	 *                         The ID of the application to be rejected.
+	 *            The ID of the application to be rejected.
 	 * @param applicantDetails
-	 *                         The applicant details model attribute.
+	 *            The applicant details model attribute.
 	 * @return The view name to redirect after the rejection process.
 	 */
 	@RequestMapping(value = { "/reject/{applicationId}/po" })
@@ -590,11 +590,11 @@ public class mainController {
 	 * Handles the request when Police Officer (PO) approves an application.
 	 *
 	 * @param model
-	 *                         The model to store attributes.
+	 *            The model to store attributes.
 	 * @param applicationId
-	 *                         The ID of the application to be approved.
+	 *            The ID of the application to be approved.
 	 * @param applicantDetails
-	 *                         The applicant details model attribute.
+	 *            The applicant details model attribute.
 	 * @return The view name to redirect after the approval process.
 	 */
 	@GetMapping(value = "/approve/{applicationId}/police")
@@ -616,11 +616,11 @@ public class mainController {
 	 * Handles the request when Police Officer (PO) rejects an application.
 	 *
 	 * @param model
-	 *                         The model to store attributes.
+	 *            The model to store attributes.
 	 * @param applicationId
-	 *                         The ID of the application to be rejected.
+	 *            The ID of the application to be rejected.
 	 * @param applicantDetails
-	 *                         The applicant details model attribute.
+	 *            The applicant details model attribute.
 	 * @return The view name to redirect after the rejection process.
 	 */
 	@RequestMapping(value = { "/reject/{applicationId}/police" })
